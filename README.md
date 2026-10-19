@@ -2,7 +2,7 @@
 
 **Community-maintained, experimental OpenRGB controller extension for the EPOMAKER × AULA F75 MAX.**
 
-> **Status:** A Fedora 44 user reported that the initial prototype builds, detects the keyboard and changes its RGB colors. This branch contains additional **untested-on-hardware** reliability and Off-mode fixes. There is no standalone OpenRGB plugin binary and this is not yet merged upstream.
+> **Status:** An owner of the `0c45:80b1` wired keyboard and `05ac:024f` receiver confirms a successful Fedora 44 build and working OpenRGB color controls, including the Off-mode and color-change fixes (October 19, 2026). This is a community prerelease tested on one hardware setup, not an official OpenRGB release.
 
 [Deutsche Anleitung](README.de.md) · [Test plan](docs/TESTING.md) · [Attribution](NOTICE.md)
 
