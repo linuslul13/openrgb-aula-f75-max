@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible problem without uploading personal system identifiers
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not attach raw logs or screenshots containing serial numbers, MAC/IP addresses, usernames, or hostnames.
+  - type: input
+    id: distro
+    attributes:
+      label: Operating system and OpenRGB version
+      placeholder: Fedora 44, OpenRGB commit or release
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Keyboard model / non-unique USB IDs
+      placeholder: AULA F75 MAX, receiver 05ac:024f
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: OpenRGB -> Static -> set red...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: redaction
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed MAC addresses, device serials, IP addresses, hostnames, email addresses and account names from any shared content.
+          required: true
