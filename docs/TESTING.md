@@ -3,10 +3,10 @@
 Run against an **actual** F75 MAX, 2.4G mode, receiver `05ac:024f` (FF60). Close other RGB control programs. Log observations and exact OpenRGB commit hash. No firmware flashing or reset needed.
 
 - [ ] OpenRGB built cleanly after installing these files, no duplicate controller detected.
-- [ ] OpenRGB device `AULA F75 MAX (2.4G)` appears on 2.4G, not confused with generic Apple keyboard interfaces.
+- [x] OpenRGB device `AULA F75 MAX (2.4G)` appears on 2.4G, not confused with generic Apple keyboard interfaces.
 - [ ] Mode `Static`: pure red `FF0000`, green `00FF00`, blue `0000FF`, white `FFFFFF` display correctly.
-- [ ] Mode `Off` turns off keyboard *backlighting* (keyboard remains usable; status lights/TFT are separate).
-- [ ] "Set all LEDs to black" turns off backlighting and does not leave previous preset running.
+- [x] Mode `Off` turns off keyboard *backlighting* (keyboard remains usable; status lights/TFT are separate).
+- [x] "Set all LEDs to black" turns off backlighting and does not leave previous preset running.
 - [ ] From `Off` change to `Static` and back at least five times.
 - [ ] Quickly change colors 20 times; record ignored changes, if any.
 - [ ] Breathing, Spectrum, Rolling Rainbow and Ripples give plausible results.
@@ -19,7 +19,7 @@ Run against an **actual** F75 MAX, 2.4G mode, receiver `05ac:024f` (FF60). Close
 
 ## Diagnosis
 
-The device protocol has no verified RGB ACK. Duplicate writes are a *mitigation*, not a confirmed solution. If OpenRGB Off remains faulty but `aula.py rgb --mode off` works, send: exact steps, selected OpenRGB mode, keyboard connection selector position, and version; no private logs necessary.
+The device protocol has no verified RGB ACK. The original hardware tester reports the missed color updates are no longer occurring, but duplicate writes are a *mitigation*, not a protocol-level guarantee for other devices. If OpenRGB Off remains faulty but `aula.py rgb --mode off` works, send: exact steps, selected OpenRGB mode, keyboard connection selector position, and version; no private logs necessary.
 
 If **both** OpenRGB and `aula.py` Off fail, keep it listed as a known issue and do not advertise "Off" as supported on that hardware variant until validated.
 
@@ -33,4 +33,4 @@ If **both** OpenRGB and `aula.py` Off fail, keep it listed as a known issue and 
 
 ## Confirmed initial field report (2026-10-19)
 
-A Fedora 44 user confirms compilation, OpenRGB detection, RGB control, and that the follow-up Off/color-change corrections work. No personal device details are stored. The full matrix above has not been independently recorded; keep remaining test cases open.
+The original Fedora 44 tester confirms compilation, OpenRGB device detection and all desired lighting controls. They explicitly verified that **Off** and **all LEDs black** turn off the backlighting, and that previously ignored color changes now work. Hardware report received October 19, 2026. No identifying MAC addresses, serial numbers, machine hostnames or user paths were collected or stored. The test did **not** supply exact repeat counts, every effect preset, sleep/resume/replug or cross-device regression results; those unchecked cases remain open.

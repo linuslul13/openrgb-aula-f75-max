@@ -30,11 +30,15 @@ Bei einer vorhandenen Treiberversion erstellt das Skript zunächst eine Sicherhe
 
 Fehlende Fedora-Pakete: `sudo dnf install -y automake gcc-c++ git make hidapi-devel libusbx-devel mbedtls-devel pkgconf qt5-qtbase-devel qt5-linguist`. Für Linux-HID-Zugriff siehe [docs/UDEV.md](docs/UDEV.md).
 
-## Test: zwei gemeldete Fehler
+## Bestätigter Praxistest (19.10.2026)
+
+Der ursprüngliche Tester hat unter Fedora 44 bestätigt, dass **alle gewünschten OpenRGB-Beleuchtungsfunktionen funktionieren**. Insbesondere lassen sich jetzt die Hintergrundbeleuchtung mit **Off** und mit **alle LEDs auf Schwarz** ausschalten sowie Farben ohne das zuvor aufgetretene Problem mit ignorierten Farbwechseln ändern. Dies ist ein bestätigter Test mit einem Gerät, keine Aussage über alle Hardwareversionen.
+
+### So kannst du es auf deiner Tastatur prüfen
 
 1. In OpenRGB **Modus Off** auswählen. Es sollen alle RGB-Tastenlichter ausgehen.
 2. **Alle LEDs auf Schwarz** setzen. Das sollte jetzt den Hardware-Off-Modus anwenden.
-3. Mehrmals hintereinander zwischen Rot, Blau und Grün wechseln. Änderungen sollten zuverlässiger übernommen werden.
+3. Mehrmals hintereinander zwischen Rot, Blau und Grün wechseln. Der ursprüngliche Tester bestätigt, dass die früher gelegentlich ignorierten Änderungen bei seinem Gerät jetzt funktionieren.
 
 Wenn Off nicht funktioniert, separat testen:
 

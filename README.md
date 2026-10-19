@@ -24,10 +24,14 @@ The dongle reports as an Apple keyboard on some systems. Detection is restricted
 - Does **not** turn the keyboard itself off; only controls backlighting. Indicator LEDs and the TFT may remain on.
 - Does **not** upload GIFs, sync time, remap keys, update firmware or change keyboard power state.
 
+### Verified hardware report
+
+On October 19, 2026, the original Fedora 44 tester confirmed that **all requested OpenRGB lighting functions work on their EPOMAKER × AULA F75 MAX**, including setting colors, switching the backlighting off, using all-black to switch it off, and changing colors without the earlier missed-update problem. This is one user-confirmed setup, not an exhaustive test of every preset or device revision.
+
 ### Known limitations
 
-- The hardware does not send a documented acknowledgment for these RGB commands. A successful `hid_write()` only means an OUTPUT report was accepted by the OS. To reduce occasional ignored changes, the extension sends each lighting sequence twice with a short delay. **This is a test candidate, not a verified fix.**
-- OpenRGB's "set all LEDs to black" color path now selects the hardware Off mode instead of re-applying the previous preset. Both this fix and direct Off mode require another hardware test.
+- The hardware does not send a documented acknowledgment for these RGB commands. A successful `hid_write()` only means an OUTPUT report was accepted by the OS. To reduce occasional ignored changes, the extension sends each lighting sequence twice with a short delay. **The original Fedora 44 tester confirms the previously missed color updates are no longer occurring in their setup.** The receiver protocol still has no verified RGB acknowledgment, so reliability across other devices is not guaranteed.
+- OpenRGB's "set all LEDs to black" color path now selects the hardware Off mode instead of re-applying the previous preset. **The original Fedora 44 tester confirms that Off and setting all LEDs to black now turn the keyboard backlighting off.**
 - Only the 2.4 GHz dongle pathway is implemented. Put the keyboard in **2.4G mode** while testing. Do not run another RGB controller application that opens the same receiver simultaneously.
 - Lighting will not necessarily reflect OpenRGB's last selected color after unplug/replug or keyboard sleep. A future read-back implementation would require protocol research.
 - May not work with every F75 MAX revision. The `80b1` cable ID alone is not proof of RGB firmware compatibility.
