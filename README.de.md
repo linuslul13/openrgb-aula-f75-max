@@ -2,7 +2,7 @@
 
 **Experimenteller OpenRGB-Treiber für die RGB-Beleuchtung über den 2,4-GHz-Empfänger.**
 
-**Status:** Der ursprüngliche Prototyp wurde unter Fedora 44 erfolgreich kompiliert und konnte die Tastaturfarben steuern. Diese Version enthält zusätzliche Korrekturen für "Off" und gelegentlich ignorierte Farbwechsel. **Diese Korrekturen müssen noch an der echten Tastatur geprüft werden.**
+**Status:** Die OpenRGB-Anbindung wurde unter Fedora 44 an einer EPOMAKER × AULA F75 MAX erfolgreich getestet. Der erste Hardwaretester bestätigt, dass Farbsteuerung, Off-Modus und die Korrektur gelegentlich ignorierter Farbwechsel funktionieren. Weitere Hardwarevarianten sind noch nicht umfassend geprüft.
 
 ## Unterstützte Funktionen
 
